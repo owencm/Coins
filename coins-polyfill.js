@@ -47,6 +47,7 @@
 		var depreciateCoins = function (numDays, depreciationRate) {
 			// Do with a for loop so rounding is applied within each loop, not afterwards if you were to use a power
 			var lastCoinCount;
+			// TODO(owencm): Reqrite with a while loop to avoid the weird break
 			for (var i = 0; i < numDays; i++) {
 				var newCoinCount = Math.round(localStorage.coinCountPrivate*depreciationRate)
 				// If it's not changing any more, break.
