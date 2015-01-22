@@ -14,7 +14,8 @@
 // Note: this also adds localstorage.coinCountPrivate and localstorage.lastVisited 
 // which wouldn't be visible in a real implementation.
 
-// TODO(owencm): Promisify me and tidy up, especially unclear logging
+// TODO(owencm): Please tidy me up, fix messy logging, add SW support and a nicer way
+// of specifying which APIs/methods now require coins.
 (function() {
 
 	// The private API implementation, of which a subset will be exposed publically
@@ -120,6 +121,7 @@
 	};
 })();
 
+// This is just a useful debug function to pretend you last visited the site a while ago and see the affect on coins.
 var pretendLastVisitWasNDaysAgo = function (numDays) {
 	localStorage.lastVisited = (new Date).getTime() - numDays*24*60*60*1000;
 	console.log('Your last visit date is set. Refresh to see the effect');
