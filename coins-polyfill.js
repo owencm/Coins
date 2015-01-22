@@ -67,6 +67,7 @@
 			// TODO(owencm): change this to first visit in 12 hours
 			var visitCoins = 0;
 			if (numDays > 0) {
+				// This magic is explained in my coins proposal document. Message me if you don't have it.
 				// Add a Math.max to prevent this going negative if numDays > 31
 				visitCoins = Math.max(0, Math.round(0.5+(30-numDays)/2));
 			}
@@ -108,7 +109,7 @@
 	};
 
 	var coinManagerPrivate = CoinManagerPrivate();
-
+m
 	// Add the public API to the window
 	navigator.coinManager = {getCoinCount: coinManagerPrivate.getCoinCount, getCoinDepreciationRate: coinManagerPrivate.getCoinDepreciationRate, requestExtraCoins: coinManagerPrivate.requestExtraCoins};
 
